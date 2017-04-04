@@ -22,5 +22,7 @@ git node["netdata"]["install-repo-dir"] do
 end
 
 execute 'run_netdata' do
- command '/opt/netdata-install/netdata-installer.sh --install /opt --dont-wait'
+ command './netdata-installer.sh --install /opt --dont-wait'
+ cwd node["netdata"]["install-repo-dir"]
 end
+
