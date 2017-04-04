@@ -15,3 +15,8 @@ service 'postgresql' do
  action :start 
 end
 
+execute "createdb test_db" do
+ user "postgres"
+ action :run
+ command "createdb test_db"
+end
